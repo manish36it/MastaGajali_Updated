@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 96%;
+    --foreground: 20 15% 15%;
+
+    --card: 30 20% 98%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 30 20% 98%;
+    --popover-foreground: 20 15% 15%;
+
+    --primary: 15 65% 42%;
+    --primary-foreground: 40 100% 97%;
+
+    --secondary: 200 45% 25%;
+    --secondary-foreground: 200 20% 95%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 20 15% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 15 65% 42%;
+
+    --radius: 0.5rem;
+
+    --ocean: 200 55% 35%;
+    --ocean-foreground: 200 20% 95%;
+    --terracotta: 15 55% 48%;
+    --golden: 38 85% 55%;
+    --sage: 140 25% 40%;
+    --sunset: 22 92% 58%;
+    --coral: 10 85% 62%;
+    --deep-sea: 205 62% 24%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 30 15% 92%;
+    --card: 20 15% 13%;
+    --card-foreground: 30 15% 92%;
+    --popover: 20 15% 13%;
+    --popover-foreground: 30 15% 92%;
+    --primary: 15 65% 50%;
+    --primary-foreground: 40 100% 97%;
+    --secondary: 200 45% 30%;
+    --secondary-foreground: 200 20% 95%;
+    --muted: 20 12% 20%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 38 85% 55%;
+    --accent-foreground: 20 15% 12%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 20 12% 22%;
+    --input: 20 12% 22%;
+    --ring: 15 65% 50%;
+    --ocean: 200 55% 45%;
+    --ocean-foreground: 200 20% 95%;
+    --terracotta: 15 55% 55%;
+    --golden: 38 85% 60%;
+    --sage: 140 25% 50%;
+    --sunset: 22 92% 63%;
+    --coral: 10 85% 67%;
+    --deep-sea: 205 62% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 8% 10%, hsl(var(--golden) / 0.08), transparent 25%),
+      radial-gradient(circle at 92% 4%, hsl(var(--ocean) / 0.08), transparent 28%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(38 85% 55%), hsl(25 75% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(20 15% 10% / 0.3) 0%,
+      hsl(20 15% 10% / 0.6) 50%,
+      hsl(20 15% 10% / 0.85) 100%
+    );
+  }
+
+  .bg-ocean-gradient {
+    background: linear-gradient(135deg, hsl(200 55% 25%), hsl(200 45% 35%));
+  }
+  .bg-sunset-gradient {
+    background: linear-gradient(135deg, hsl(var(--sunset)), hsl(var(--golden)), hsl(var(--coral)));
+  }
+
+  .bg-coastal-gradient {
+    background: linear-gradient(135deg, hsl(var(--deep-sea)), hsl(var(--ocean)), hsl(var(--terracotta)));
+  }
+
+  .section-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .section-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 12%, hsl(var(--golden) / 0.08), transparent 30%),
+      radial-gradient(circle at 88% 88%, hsl(var(--ocean) / 0.09), transparent 35%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glass-card {
+    background: linear-gradient(160deg, hsl(var(--card) / 0.85), hsl(var(--card) / 0.6));
+    backdrop-filter: blur(4px);
+    border: 1px solid hsl(var(--border) / 0.75);
+  }
+
+  .card-hover-lift {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px -14px hsl(var(--golden) / 0.22);
+    border-color: hsl(var(--golden) / 0.35);
+  }
+
+  .shadow-warm {
+    box-shadow: 0 10px 40px -10px hsl(15 65% 42% / 0.2);
+  }
+
+  .shadow-golden {
+    box-shadow: 0 8px 30px -8px hsl(38 85% 55% / 0.3);
+  }
+}
+
+/* Crazy custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--golden)));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--golden)), hsl(var(--primary)));
+}
+
+/* Selection color */
+::selection {
+  background: hsl(var(--golden) / 0.3);
+  color: hsl(var(--foreground));
+}
