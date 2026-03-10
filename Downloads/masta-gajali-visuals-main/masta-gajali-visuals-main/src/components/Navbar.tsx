@@ -39,7 +39,7 @@ const Navbar = () => {
     : "bg-black/95 md:bg-transparent backdrop-blur-xl md:backdrop-blur-0 border-b border-golden/25 md:border-b-0";
   const showNavEffects = scrolled || !isHome;
 
-  const textColor = "text-primary-foreground";
+  const textColor = "text-white";
 
   const mobileMenuVariants = {
     hidden: { opacity: 0, height: 0 },
