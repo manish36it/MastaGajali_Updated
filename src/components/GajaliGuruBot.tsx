@@ -298,12 +298,12 @@ const GajaliGuruBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.96 }}
             transition={{ type: "spring", damping: 18 }}
-            className="fixed bottom-4 right-2 md:right-6 z-40 w-[min(380px,92vw)]"
+            className="fixed bottom-20 md:bottom-4 right-2 md:right-6 z-40 w-[min(380px,92vw)]"
           >
-            <div className="relative rounded-3xl border border-golden/35 bg-[hsl(20,15%,6%/0.98)] backdrop-blur-xl shadow-[0_24px_70px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col max-h-[72vh]">
+            <div className="relative rounded-3xl border border-amber-500/35 bg-[#1a120a]/98 backdrop-blur-xl shadow-[0_24px_70px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col max-h-[65vh] md:max-h-[72vh]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0_0,hsl(38_85%_55%_/_0.14),transparent_38%),radial-gradient(circle_at_100%_100%,hsl(10_80%_55%_/_0.12),transparent_42%)]" />
               {/* Header */}
-              <div className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-golden/25 bg-gradient-to-r from-[hsl(20,15%,10%)] via-[hsl(20,15%,8%)] to-[hsl(20,15%,10%)]">
+              <div className="relative z-10 flex items-center justify-between px-4 py-3 border-b border-amber-500/25 bg-gradient-to-r from-[#1a120a] via-[#150f0a] to-[#1a120a]">
                 <div className="flex items-center gap-2">
                   <div className="relative">
                     <motion.div

@@ -8,7 +8,7 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-[hsl(20,12%,8%)] text-primary-foreground/50 py-10 border-t border-golden/10 relative overflow-hidden"
+      className="bg-[#1a120a] text-amber-100/70 py-8 md:py-10 border-t border-amber-500/20 relative overflow-hidden"
     >
       <motion.div
         className="absolute inset-x-0 -top-10 h-10 bg-gradient-to-b from-golden/10 via-transparent to-transparent pointer-events-none"
